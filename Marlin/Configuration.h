@@ -1,4 +1,14 @@
 /**
+ * 
+ *  
+ *  M665 R85.14 L184.50
+    M666 X-0.37 Y-0.48 Z0.00
+    ; Set homed height 213.17mm in config.h
+ * 
+ * 
+ */
+
+/**
  * Marlin 3D Printer Firmware
  * Copyright (C) 2016 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
@@ -404,7 +414,7 @@
   // Center-to-center distance of the holes in the diagonal push rods.
 //  #define DELTA_DIAGONAL_ROD 185.0 // mm
   #define DELTA_DIAGONAL_ROD 184.5 // mm
-
+git 
   // Horizontal offset from middle of printer to smooth rod center.
 //  #define DELTA_SMOOTH_ROD_OFFSET 140.0 // mm
   #define DELTA_SMOOTH_ROD_OFFSET 141.0 // mm
@@ -419,7 +429,8 @@
   #define DELTA_CARRIAGE_OFFSET 22 // mm
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
-  #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-(DELTA_EFFECTOR_OFFSET)-(DELTA_CARRIAGE_OFFSET))
+//  #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-(DELTA_EFFECTOR_OFFSET)-(DELTA_CARRIAGE_OFFSET))
+  #define DELTA_RADIUS 85.14
 
   // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
 //  #define DELTA_PRINTABLE_RADIUS 110.0
@@ -818,7 +829,7 @@
 //#define MANUAL_X_HOME_POS 0
 //#define MANUAL_Y_HOME_POS 0
 //#define MANUAL_Z_HOME_POS 177.6 // Distance between the nozzle to printbed after homing
-#define MANUAL_Z_HOME_POS 213.5 // Distance between the nozzle to printbed after homing
+#define MANUAL_Z_HOME_POS 213.17 // Distance between the nozzle to printbed after homing
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
 //
