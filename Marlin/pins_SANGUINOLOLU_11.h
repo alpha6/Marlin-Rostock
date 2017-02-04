@@ -63,6 +63,9 @@
 #define E0_STEP_PIN         1
 #define E0_DIR_PIN          0
 
+#define Z_MIN_PROBE_PIN     30
+#define Z_MIN_PIN           30
+
 //
 // Temperature Sensors
 //
