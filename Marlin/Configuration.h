@@ -643,12 +643,12 @@ MANUAL_Z_HOME_POS
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 2000
 // Speed for the first approach when double-probing (with PROBE_DOUBLE_TOUCH)
-#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
-//#define Z_PROBE_SPEED_FAST 2000
+//#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
+#define Z_PROBE_SPEED_FAST 700
 // Speed for the "accurate" probe of each point
 #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
 // Use double touch for probing
-//#define PROBE_DOUBLE_TOUCH
+#define PROBE_DOUBLE_TOUCH
 
 // Allen key retractable z-probe as seen on many Kossel delta printers - http://reprap.org/wiki/Kossel#Automatic_bed_leveling_probe
 // Deploys by touching z-axis belt. Retracts by pushing the probe down. Uses Z_MIN_PIN.
@@ -807,7 +807,7 @@ MANUAL_Z_HOME_POS
 
 // @section homing
 
-//#define Z_HOMING_HEIGHT 15 // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
+#define Z_HOMING_HEIGHT 15 // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
                              // Be sure you have this distance over your Z_MAX_POS in case.
 
 // ENDSTOP SETTINGS:
@@ -914,10 +914,11 @@ MANUAL_Z_HOME_POS
   #define ABL_GRID_POINTS_Y ABL_GRID_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
-  #define LEFT_PROBE_BED_POSITION 15
-  #define RIGHT_PROBE_BED_POSITION 70
-  #define FRONT_PROBE_BED_POSITION 20
-  #define BACK_PROBE_BED_POSITION 70
+  #define DELTA_PROBEABLE_RADIUS (DELTA_PRINTABLE_RADIUS - 30)
+  #define LEFT_PROBE_BED_POSITION -(DELTA_PROBEABLE_RADIUS)
+  #define RIGHT_PROBE_BED_POSITION DELTA_PROBEABLE_RADIUS
+  #define FRONT_PROBE_BED_POSITION -(DELTA_PROBEABLE_RADIUS)
+  #define BACK_PROBE_BED_POSITION DELTA_PROBEABLE_RADIUS
 
   // The Z probe minimum outer margin (to validate G29 parameters).
   #define MIN_PROBE_EDGE 10
@@ -973,7 +974,7 @@ MANUAL_Z_HOME_POS
 // For DELTA this is the top-center of the Cartesian print volume.
 //#define MANUAL_X_HOME_POS 0
 //#define MANUAL_Y_HOME_POS 0
-#define MANUAL_Z_HOME_POS 177.6 // Distance between the nozzle to printbed after homing
+#define MANUAL_Z_HOME_POS 156.6 // Distance between the nozzle to printbed after homing
 //#define MANUAL_Z_HOME_POS 213.32 // Distance between the nozzle to printbed after homing
 //#define MANUAL_Z_HOME_POS 212.70
 
