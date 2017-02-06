@@ -460,7 +460,7 @@ MANUAL_Z_HOME_POS
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
 //  #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-(DELTA_EFFECTOR_OFFSET)-(DELTA_CARRIAGE_OFFSET))
-  #define DELTA_RADIUS 85.14
+  #define DELTA_RADIUS 85.19
 
   // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
   #define DELTA_PRINTABLE_RADIUS 70
@@ -472,7 +472,7 @@ MANUAL_Z_HOME_POS
   // After homing move down to a height where XY movement is unconstrained
   #define DELTA_HOME_TO_SAFE_ZONE
 
-  //#define DELTA_ENDSTOP_ADJ { 0, 0, 0 }
+  #define DELTA_ENDSTOP_ADJ { -0.58, -0.60, 0 }
 
 #endif
 
@@ -644,8 +644,8 @@ MANUAL_Z_HOME_POS
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 1000
 // Speed for the first approach when double-probing (with PROBE_DOUBLE_TOUCH)
-//#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
-#define Z_PROBE_SPEED_FAST 700
+#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
+//#define Z_PROBE_SPEED_FAST 1500
 // Speed for the "accurate" probe of each point
 #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
 // Use double touch for probing
@@ -804,7 +804,7 @@ MANUAL_Z_HOME_POS
 
 // @section homing
 
-#define Z_HOMING_HEIGHT 15 // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
+#define Z_HOMING_HEIGHT 5 // (in mm) Minimal z height before homing (G28) for Z clearance above the bed, clamps, ...
                              // Be sure you have this distance over your Z_MAX_POS in case.
 
 // ENDSTOP SETTINGS:
@@ -914,7 +914,7 @@ MANUAL_Z_HOME_POS
   #define ABL_GRID_MAX_POINTS_Y ABL_GRID_MAX_POINTS_X
 
   // Set the boundaries for probing (where the probe can reach).
-  #define DELTA_PROBEABLE_RADIUS (DELTA_PRINTABLE_RADIUS - 20)
+  #define DELTA_PROBEABLE_RADIUS (DELTA_PRINTABLE_RADIUS - 10)
   #define LEFT_PROBE_BED_POSITION -(DELTA_PROBEABLE_RADIUS)
   #define RIGHT_PROBE_BED_POSITION DELTA_PROBEABLE_RADIUS
   #define FRONT_PROBE_BED_POSITION -(DELTA_PROBEABLE_RADIUS)
@@ -974,7 +974,7 @@ MANUAL_Z_HOME_POS
 // For DELTA this is the top-center of the Cartesian print volume.
 //#define MANUAL_X_HOME_POS 0
 //#define MANUAL_Y_HOME_POS 0
-#define MANUAL_Z_HOME_POS 156.7 // Distance between the nozzle to printbed after homing
+#define MANUAL_Z_HOME_POS 165.30 // Distance between the nozzle to printbed after homing
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
 //
