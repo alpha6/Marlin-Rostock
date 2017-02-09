@@ -645,9 +645,9 @@ MANUAL_Z_HOME_POS
 #define XY_PROBE_SPEED 1000
 // Speed for the first approach when double-probing (with PROBE_DOUBLE_TOUCH)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
-//#define Z_PROBE_SPEED_FAST 1500
+//#define Z_PROBE_SPEED_FAST 4000
 // Speed for the "accurate" probe of each point
-#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
+#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 4)
 // Use double touch for probing
 //#define PROBE_DOUBLE_TOUCH
 
